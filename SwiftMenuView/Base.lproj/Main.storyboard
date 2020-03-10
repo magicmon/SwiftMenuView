@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftMenuView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udr-c0-PLd">
+                                <rect key="frame" x="15" y="15" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="UDw-I3-M2n"/>
+                                    <constraint firstAttribute="width" constant="32" id="xjj-9M-nk2"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                <state key="normal" image="menu"/>
+                                <connections>
+                                    <action selector="pressedMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DR7-2r-jRi"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKd-Nz-Y93" customClass="MenuView" customModule="SwiftMenuView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eKd-Nz-Y93" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6Ts-Eq-AOa"/>
+                            <constraint firstItem="udr-c0-PLd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="BXr-Wd-XN2"/>
+                            <constraint firstItem="eKd-Nz-Y93" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="J7B-b0-ELL"/>
+                            <constraint firstItem="eKd-Nz-Y93" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Yjq-No-EJn"/>
+                            <constraint firstItem="udr-c0-PLd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="hR1-ii-Ev0"/>
+                            <constraint firstItem="eKd-Nz-Y93" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wpa-FK-Bqc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="72N-oY-wOI" appends="YES" id="20J-uf-Ify"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="menuView" destination="eKd-Nz-Y93" id="zRn-co-odc"/>
+                        <outlet property="menuViewLeading" destination="6Ts-Eq-AOa" id="12T-55-VdJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="72N-oY-wOI">
+                    <connections>
+                        <action selector="panPerformed:" destination="BYZ-38-t0r" id="tv7-g2-fsc"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-151.19999999999999" y="115.59220389805098"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menu" width="512" height="512"/>
+    </resources>
+</document>

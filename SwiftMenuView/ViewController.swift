@@ -40,14 +40,14 @@ extension ViewController {
                     self.menuViewLeading.constant = -(self.menuView.frame.size.width - translation)
                     self.view.layoutIfNeeded()
                 } else {
-                    self.menuViewLeading.constant = 0
+                    self.toggleMenu(true)
                 }
             } else {    // swipe left
                 if menuViewLeading.constant > -self.view.frame.size.width + panOffset {
                     self.menuViewLeading.constant = translation
                     self.view.layoutIfNeeded()
                 } else {
-                    menuViewLeading.constant = -self.view.frame.size.width
+                    self.toggleMenu(false)
                 }
             }
         case .ended:
